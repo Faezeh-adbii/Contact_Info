@@ -25,9 +25,9 @@ function ContactInfo() {
   return (
     <div className=" mx-20 pt-14 px-10">
       <ul className=" grid  grid-cols-New-ContactInfo gap-10 ">
-        {Datas.map((Data, index) => (
-          <li>
-            <Info key={index} data={Data} />
+        {Datas.map((Data , index) => (
+          <li key={index} >
+            <Info data={Data} />
           </li>
         ))}
       </ul>
