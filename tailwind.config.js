@@ -2,7 +2,11 @@
 export default {
     content: ["./index.html", "./src/**/*.{js,jsx,ts,tsx}"],
     theme: {
-        extend: {},
+        extend: {
+            gridTemplateColumns: {
+                "New-ContactInfo": 'repeat(auto-fit , minmax(260px , 1fr))'
+            }
+        },
     },
     plugins: [],
 };
