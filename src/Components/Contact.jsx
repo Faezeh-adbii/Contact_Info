@@ -1,4 +1,6 @@
 import { useState } from "react";
+import ContactList from "./ContactList";
+import { v4 } from "uuid";
 
 const inputs = [
   { type: "text", name: "Name", placeholder: "Name" },
@@ -7,6 +9,7 @@ const inputs = [
   { type: "number", name: "Phone", placeholder: "Phone" },
 ];
 function Contact() {
+  const [Forms , setForms]=useState([]);
   const [Form, setForm] = useState({
     Name: "",
     Lastname: "",
@@ -23,7 +26,14 @@ function Contact() {
 
   //submitHandler
   const submitHandler = () => {
-    console.log(Form);
+    const NewForm={...Form ,id:v4()};
+    setForms((Forms) => ([...Forms , NewForm]));
+    setForm({
+      id:"",
+      Name:"",
+      Lastname:"",
+      Phone:"",
+    })
   };
 
   return (
@@ -41,6 +51,7 @@ function Contact() {
         ))}
         <button onClick={submitHandler}>SUBMIT</button>
       </form>
+      <div> <ContactList Forms={Forms}/>   </div>
     </div>
   );
 }
