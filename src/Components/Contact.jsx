@@ -1,13 +1,9 @@
 import { useState } from "react";
 import ContactList from "./ContactList";
 import { v4 } from "uuid";
+import inputs from "../Contants/inputs";
 
-const inputs = [
-  { type: "text", name: "Name", placeholder: "Name" },
-  { type: "text", name: "Lastname", placeholder: "Lastname" },
-  { type: "email", name: "Email", placeholder: "Email" },
-  { type: "number", name: "Phone", placeholder: "Phone" },
-];
+
 function Contact() {
   const [Forms , setForms]=useState([]);
   const [Form, setForm] = useState({
