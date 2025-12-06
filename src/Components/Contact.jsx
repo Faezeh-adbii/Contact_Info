@@ -14,18 +14,32 @@ function Contact() {
     Phone: "",
   });
 
+  //changeHandler
+  const changeHandler = (event) => {
+    const name = event.target.name;
+    const value = event.target.value;
+    setForm((Form) => ({ ...Form, [name]: value }));
+  };
+
+  //submitHandler
+  const submitHandler = () => {
+    console.log(Form);
+  };
+
   return (
     <div>
       <form>
-        {inputs.map((input) => (
+        {inputs.map((input, index) => (
           <input
+            key={index}
             type={input.type}
             name={input.name}
             placeholder={input.placeholder}
             value={Form[input.name]}
+            onChange={changeHandler}
           />
         ))}
-        <button>SUBMIT</button>
+        <button onClick={submitHandler}>SUBMIT</button>
       </form>
     </div>
   );
