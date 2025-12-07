@@ -21,10 +21,10 @@ const Datas = [
   },
 ];
 
-function ContactInfo() {
+function ContactInfo({className}) {
   return (
-    <div className=" mx-20 pt-14 px-10">
-      <ul className=" grid  grid-cols-New-ContactInfo gap-10 ">
+    <div className= {` px-52 pt-12 xl:px-32 xl:pt-20 ${className}  ` }>
+      <ul className="  grid  grid-cols-New-ContactInfo gap-10  ">
         {Datas.map((Data , index) => (
           <li key={index} >
             <Info data={Data} />
