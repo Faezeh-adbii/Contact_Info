@@ -8,8 +8,11 @@
         }
         body {
             margin: auto;
-            min-width: 1000px;
+            max-width: 1000px;
             min-height: 100vh;
+            background: linear-gradient( to bottom right, #E9D5FF 0%, #FBCFE8 50%, #BFDBFE 100%);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
         }
         * {
             padding: 0;
