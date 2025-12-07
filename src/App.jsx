@@ -4,8 +4,8 @@ import ContactInfo from "./Components/ContactInfo";
 function App() {
   return (
     <>
-      <div className="bg-gradient-to-br from-purple-200 via-pink-200 to-blue-200 h-screen " >
-        <ContactInfo/>
+      <div className="xl:relative b">
+        <ContactInfo className="xl:absolute xl:w-full" />
         <Contact/>
       </div>
     </>
