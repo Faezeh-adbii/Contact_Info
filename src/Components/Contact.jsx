@@ -5,6 +5,7 @@ import inputs from "../Contants/inputs";
 
 function Contact() {
   const [Forms, setForms] = useState([]);
+  const [Alert, setAlert] = useState("");
   const [Form, setForm] = useState({
     Name: "",
     Lastname: "",
@@ -21,20 +22,28 @@ function Contact() {
 
   //submitHandler
   const submitHandler = () => {
+    if (!Form.Name || !Form.Lastname || !Form.Email || !Form.Phone) {
+      setAlert("Please enter valid data!");
+      return;
+    }
+    setAlert("");
     const NewForm = { ...Form, id: v4() };
     setForms((Forms) => [...Forms, NewForm]);
     setForm({
       id: "",
       Name: "",
       Lastname: "",
+      Email: "",
       Phone: "",
     });
   };
 
   return (
     <div className="place-items-center pt-20 xl:pt-52 ">
-      <form className="bg-white/70 shadow-2xl shadow-slate-500 xl:pt-24   p-10 pt-6 w-[90%]  md:w-[80%] lg:w-[70%] xl:w-[60%] xl:h-96 rounded-lg ">
-        <p className="text-center mb-6 font-bold text-2xl text-blue-950">Contact US</p>
+      <form className="bg-white/70 shadow-2xl shadow-slate-500 xl:pt-24   p-10 pt-6 w-[90%]  md:w-[80%] lg:w-[70%] xl:w-[60%] xl:h-[400px] rounded-lg ">
+        <p className="text-center mb-6 font-bold text-2xl text-blue-950">
+          Contact US
+        </p>
         <div className=" grid grid-cols-[repeat(auto-fit,minmax(315px,1fr))]  text-center pt-4  ">
           {inputs.map((input, index) => (
             <input
@@ -50,6 +59,7 @@ function Contact() {
         </div>
         <p className="text-center">
           <button
+            type="submit"
             className="w-1/2 lg:w-1/3 h-10 rounded-lg font-medium text-black bg-gradient-to-r from-purple-300 via-purple-400 to-purple-500"
             onClick={submitHandler}
           >
@@ -57,10 +67,14 @@ function Contact() {
           </button>
         </p>
       </form>
-      <div>
-        <ContactList Forms={Forms} />
+      <div className="text-center w-[60%] ">
+        {Alert && (
+          <p className="bg-red-500/40 inline-block rounded-md  w-[100%] mt-2 p-2 font-bold text-red-600/70  ">
+            {Alert}
+          </p>
+        )}
       </div>
-      
+      <ContactList Forms={Forms} />
     </div>
   );
 }
