@@ -28,7 +28,7 @@ function ContactItem({
         {Phone}
       </p>
       <button className=" place-items-center" onClick={() => deleteHandler(id)}>
-        <MdDelete className="text-2xl mt-1 hover:text-red-500 text-purple-500   hover:shadow-[#ab589985_0px_7px_29px_0px] hover:rounded-full " />
+        <MdDelete className="text-2xl mt-1 hover:scale-110 hover:text-red-500 text-purple-500   hover:shadow-[#ab589985_0px_7px_29px_0px] hover:rounded-full " />
       </button>
     </div>
   );
