@@ -86,9 +86,9 @@ const deleteHandler = (id) => {
           </button>
         </p>
       </form>
-      <div className="text-center w-[60%] ">
+      <div className="text-center w-[90%]  md:w-[80%] lg:w-[70%] xl:w-[60%]  ">
         {Alert && (
-          <p className="bg-red-500/40 inline-block rounded-md  w-[100%] mt-2 p-2 font-bold text-red-600/70  ">
+          <p className="bg-red-500/40 inline-block rounded-md  w-[100%] mt-2 p-[1.5%] font-bold text-red-600/70  ">
             {Alert}
           </p>
         )}
