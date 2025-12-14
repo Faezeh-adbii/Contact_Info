@@ -12,7 +12,7 @@ function ContactList({ Forms , deleteHandler }) {
             ))}
           </ul>
         ) : (
-          <p className="text-md font-bold">No Contact</p>
+          <p className="text-md font-bold text-blue-950 ">No Contact</p>
         )}
       </div>
     </div>
