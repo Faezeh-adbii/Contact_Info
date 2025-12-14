@@ -10,7 +10,7 @@ function ContactItem({
   deleteHandler,
 }) {
   return (
-    <div className="grid grid-cols-5  bg-purple-300/45 py-2 m-3 rounded-lg">
+    <div className="grid grid-cols-2 xl:grid-cols-5 gap-3 xl:gap-0  bg-purple-300/45 py-2 m-3 rounded-lg">
       <p className="text-lg text-slate-700 flex justify-center">
         <MdPerson2 className=" mt-1 text-2xl mr-3 text-purple-500 " />
         {Name}
@@ -27,7 +27,7 @@ function ContactItem({
         <FaPhone className="text-xl mt-1 mr-3 text-purple-500 " />
         {Phone}
       </p>
-      <button className=" place-items-center" onClick={() => deleteHandler(id)}>
+      <button className=" place-items-center ml-[100%] md:ml-[100%] lg:ml-[100%] xl:ml-0" onClick={() => deleteHandler(id)}>
         <MdDelete className="text-2xl mt-1 hover:scale-110 hover:text-red-500 text-purple-500   hover:shadow-[#ab589985_0px_7px_29px_0px] hover:rounded-full " />
       </button>
     </div>
