@@ -38,6 +38,11 @@ function Contact() {
     });
   };
 
+  const deleteHandler=(id)=>{
+    const NewForms= Forms.filter((Form)=>(Form.id !==id));
+    setForms(NewForms);
+  };
+
   return (
     <div className="place-items-center pt-20 xl:pt-52 ">
       <form className="bg-white/70 shadow-2xl shadow-slate-500 xl:pt-24   p-10 pt-6 w-[90%]  md:w-[80%] lg:w-[70%] xl:w-[60%] xl:h-[400px] rounded-lg ">
@@ -74,7 +79,7 @@ function Contact() {
           </p>
         )}
       </div>
-      <ContactList Forms={Forms} />
+      <ContactList Forms={Forms} deleteHandler={deleteHandler} />
     </div>
   );
 }

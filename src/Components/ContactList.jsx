@@ -1,6 +1,6 @@
 import ContactItem from "./ContactItem";
 
-function ContactList({ Forms }) {
+function ContactList({ Forms , deleteHandler }) {
   return (
     <div className="w-[80%] mb-60">
       <h1 className="font-bold text-2xl text-blue-950 mt-14">Contacts List</h1>
@@ -8,7 +8,7 @@ function ContactList({ Forms }) {
         {Forms.length ? (
           <ul>
             {Forms.map((Form) => (
-              <ContactItem key={Form.id} Forms={Form} />
+              <ContactItem key={Form.id} Forms={Form} deleteHandler={deleteHandler} />
             ))}
           </ul>
         ) : (
