@@ -60,7 +60,7 @@ function Contact() {
         <p className="text-center">
           <button
             type="button"
-            className="w-1/2 lg:w-1/3 h-10 rounded-lg font-medium text-black bg-gradient-to-r from-purple-300 via-purple-400 to-purple-500"
+            className="w-1/2 lg:w-1/3 h-10 rounded-lg font-medium text-black bg-gradient-to-r from-purple-300 via-purple-400 to-purple-500 hover:shadow-[#af78a585_0px_7px_29px_0px] hover:text-white"
             onClick={submitHandler}
           >
             SUBMIT
