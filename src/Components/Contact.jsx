@@ -59,7 +59,7 @@ function Contact() {
         </div>
         <p className="text-center">
           <button
-            type="submit"
+            type="button"
             className="w-1/2 lg:w-1/3 h-10 rounded-lg font-medium text-black bg-gradient-to-r from-purple-300 via-purple-400 to-purple-500"
             onClick={submitHandler}
           >
