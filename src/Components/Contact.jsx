@@ -2,6 +2,7 @@ import { useState } from "react";
 import ContactList from "./ContactList";
 import { v4 } from "uuid";
 import inputs from "../Contants/inputs";
+import Swal from "sweetalert2";
 
 function Contact() {
   const [Forms, setForms] = useState([]);
@@ -38,10 +39,23 @@ function Contact() {
     });
   };
 
-  const deleteHandler=(id)=>{
-    const NewForms= Forms.filter((Form)=>(Form.id !==id));
-    setForms(NewForms);
-  };
+const deleteHandler = (id) => {
+  Swal.fire({
+    title: "آیا مطمئن هستید؟",
+    text: "این مخاطب حذف خواهد شد و قابل بازگشت نیست!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#d33",
+    cancelButtonColor: "#3085d6",
+    confirmButtonText: "بله، حذف شود",
+    cancelButtonText: "لغو",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      setForms((prevForms) => prevForms.filter((Form) => Form.id !== id));
+      Swal.fire("حذف شد!", "مخاطب با موفقیت حذف شد.", "success");
+    }
+  });
+};
 
   return (
     <div className="place-items-center pt-20 xl:pt-52 ">
