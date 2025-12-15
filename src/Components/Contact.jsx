@@ -40,22 +40,41 @@ function Contact() {
   };
 
 const deleteHandler = (id) => {
-  Swal.fire({
-    title: "آیا مطمئن هستید؟",
-    text: "این مخاطب حذف خواهد شد و قابل بازگشت نیست!",
-    icon: "warning",
-    showCancelButton: true,
-    confirmButtonColor: "#d33",
-    cancelButtonColor: "#3085d6",
-    confirmButtonText: "بله، حذف شود",
-    cancelButtonText: "لغو",
+ Swal.fire({
+  title: "آیا مطمئن هستید؟",
+  text: "این مخاطب حذف خواهد شد و قابل بازگشت نیست!",
+  icon: "warning",
+  showCancelButton: true,
+  confirmButtonText: "بله، حذف شود",
+  cancelButtonText: "لغو",
+  customClass: {
+    popup: "w-[90%] max-w-md sm:max-w-lg md:max-w-xl",
+    title: "text-base sm:text-lg md:text-xl font-bold text-gray-800",
+    htmlContainer: "text-sm sm:text-base text-gray-600",
+    confirmButton:
+      "bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded w-full sm:w-auto mt-2 sm:mt-0 mx-2",
+    cancelButton:
+      "bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded w-full sm:w-auto mt-2 sm:mt-0 mx-2",
+  },
+  buttonsStyling: false,
+ // برای اینکه Tailwind کلاس‌ها رو کنترل کنه
   }).then((result) => {
     if (result.isConfirmed) {
       setForms((prevForms) => prevForms.filter((Form) => Form.id !== id));
-      Swal.fire("حذف شد!", "مخاطب با موفقیت حذف شد.", "success");
+      Swal.fire({
+        title: "حذف شد!",
+        text: "مخاطب با موفقیت حذف شد.",
+        icon: "success",
+        customClass: {
+          popup: "w-[90%] max-w-md sm:max-w-lg md:max-w-xl",
+          title: "text-base sm:text-lg md:text-xl font-bold text-green-700",
+          htmlContainer: "text-sm sm:text-base text-gray-600",
+        },
+      });
     }
   });
 };
+
 
   return (
     <div className="place-items-center pt-20 xl:pt-52 ">
